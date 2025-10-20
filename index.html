@@ -348,7 +348,6 @@
         }
       }
 
-      /* Reduced motion support */
       @media (prefers-reduced-motion: reduce) {
         * {
           animation-duration: 0.01ms !important;
@@ -368,6 +367,10 @@
         ></header>
 
         <div class="profile-content" data-testid="profile-content">
+          <p
+            id="current-time"
+            style="font-size: 0.75rem; color: gray; margin-top: 1rem"
+          ></p>
           <div class="profile-avatar-wrapper" data-testid="avatar-wrapper">
             <img
               src="/profile.jpg"
@@ -523,10 +526,90 @@
     </main>
 
     <script>
-      const timeEl = document.querySelector(".time_in_ms");
-      setInterval(() => {
-        timeEl.textContent = Date.now();
-      }, 1000);
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactButton = document.querySelector(
+          '[data-testid="contact-button"]'
+        );
+        const portfolioButton = document.querySelector(
+          '[data-testid="portfolio-button"]'
+        );
+        const profileCard = document.querySelector(
+          '[data-testid="profile-card"]'
+        );
+
+        if (contactButton) {
+          contactButton.addEventListener("click", function () {
+            console.log("[v0] Contact button clicked");
+
+            addRippleEffect(this);
+
+            showNotification("Contact form would open here");
+          });
+        }
+
+        if (portfolioButton) {
+          portfolioButton.addEventListener("click", function () {
+            console.log("[v0] Contact button clicked");
+            addRippleEffect(this);
+            showNotification("Portfolio would open here");
+          });
+        }
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            console.log("[v0] Escape key pressed");
+          }
+        });
+
+        profileCard.addEventListener("mouseenter", function () {
+          console.log("[v0] Profile card hovered");
+        });
+      });
+
+      function addRippleEffect(button) {
+        const ripple = document.createElement("span");
+        const rect = button.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = event.clientX - rect.left - size / 2;
+        const y = event.clientY - rect.top - size / 2;
+
+        ripple.style.width = ripple.style.height = size + "px";
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+        ripple.classList.add("ripple");
+
+        button.appendChild(ripple);
+
+        setTimeout(() => ripple.remove(), 600);
+      }
+
+      function showNotification(message) {
+        console.log("[v0] Notification:", message);
+        // In a real app, this would show a toast notification
+      }
+
+      function announceToScreenReader(message) {
+        const announcement = document.createElement("div");
+        announcement.setAttribute("role", "status");
+        announcement.setAttribute("aria-live", "polite");
+        announcement.setAttribute("aria-atomic", "true");
+        announcement.className = "sr-only";
+        announcement.textContent = message;
+        document.body.appendChild(announcement);
+        setTimeout(() => announcement.remove(), 1000);
+      }
+
+      function updateTimeDisplay() {
+        const now = Date.now();
+        const timeElement = document.getElementById("current-time");
+        if (timeElement) {
+          timeElement.textContent = `Current time (ms): ${now}`;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        updateTimeDisplay();
+        setInterval(updateTimeDisplay, 1000); // Update every 1 second
+      });
     </script>
   </body>
 </html>
