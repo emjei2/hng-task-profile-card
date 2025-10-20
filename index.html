@@ -537,16 +537,17 @@
         if (contactButton) {
           contactButton.addEventListener("click", function () {
             console.log("[v0] Contact button clicked");
-            // Add ripple effect
+
             addRippleEffect(this);
-            // Show feedback
+
             showNotification("Contact form would open here");
           });
         }
 
         if (portfolioButton) {
           portfolioButton.addEventListener("click", function () {
-            console.log("[v0] Portfolio button clicked");
+            const timestamp = Date.now();
+            console.log(`[v0] Portfolio button clicked at ${timestamp}ms`);
             addRippleEffect(this);
             showNotification("Portfolio would open here");
           });
@@ -558,7 +559,6 @@
           }
         });
 
-        // Log profile card interaction
         profileCard.addEventListener("mouseenter", function () {
           console.log("[v0] Profile card hovered");
         });
@@ -581,13 +581,11 @@
         setTimeout(() => ripple.remove(), 600);
       }
 
-      // Notification function
       function showNotification(message) {
         console.log("[v0] Notification:", message);
         // In a real app, this would show a toast notification
       }
 
-      // Accessibility: Announce to screen readers
       function announceToScreenReader(message) {
         const announcement = document.createElement("div");
         announcement.setAttribute("role", "status");
