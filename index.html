@@ -367,10 +367,6 @@
         ></header>
 
         <div class="profile-content" data-testid="profile-content">
-          <p
-            id="current-time"
-            style="font-size: 0.75rem; color: gray; margin-top: 1rem"
-          ></p>
           <div class="profile-avatar-wrapper" data-testid="avatar-wrapper">
             <img
               src="/profile.jpg"
@@ -403,6 +399,10 @@
             </svg>
             <span data-testid="location-text">Lagos, Nigeria</span>
           </div>
+          <p
+            id="current-time"
+            style="font-size: 0.75rem; color: gray; margin-top: 5px"
+          ></p>
           <section
             class="profile-about"
             data-testid="about-section"
@@ -608,7 +608,7 @@
       }
       document.addEventListener("DOMContentLoaded", function () {
         updateTimeDisplay();
-        setInterval(updateTimeDisplay, 1000); // Update every 1 second
+        setInterval(updateTimeDisplay, 1000);
       });
     </script>
   </body>
