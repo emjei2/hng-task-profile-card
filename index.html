@@ -189,7 +189,7 @@
         flex-wrap: wrap;
         gap: var(--spacing-sm);
         justify-content: center;
-        list-style: noneg;
+        list-style: none;
       }
 
       .hobby-badge {
@@ -504,7 +504,7 @@
             >
               <a
                 class="contact-button-link"
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=anyanwuemjei0@gmail.com"
+                href="mailto:anyanwuemjei0@gmail.com"
                 data-testid="contact-link"
               >
                 Contact</a
@@ -523,79 +523,10 @@
     </main>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const contactButton = document.querySelector(
-          '[data-testid="contact-button"]'
-        );
-        const portfolioButton = document.querySelector(
-          '[data-testid="portfolio-button"]'
-        );
-        const profileCard = document.querySelector(
-          '[data-testid="profile-card"]'
-        );
-
-        if (contactButton) {
-          contactButton.addEventListener("click", function () {
-            console.log("[v0] Contact button clicked");
-
-            addRippleEffect(this);
-
-            showNotification("Contact form would open here");
-          });
-        }
-
-        if (portfolioButton) {
-          portfolioButton.addEventListener("click", function () {
-            const timestamp = Date.now();
-            console.log(`[v0] Portfolio button clicked at ${timestamp}ms`);
-            addRippleEffect(this);
-            showNotification("Portfolio would open here");
-          });
-        }
-
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape") {
-            console.log("[v0] Escape key pressed");
-          }
-        });
-
-        profileCard.addEventListener("mouseenter", function () {
-          console.log("[v0] Profile card hovered");
-        });
-      });
-
-      function addRippleEffect(button) {
-        const ripple = document.createElement("span");
-        const rect = button.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = event.clientX - rect.left - size / 2;
-        const y = event.clientY - rect.top - size / 2;
-
-        ripple.style.width = ripple.style.height = size + "px";
-        ripple.style.left = x + "px";
-        ripple.style.top = y + "px";
-        ripple.classList.add("ripple");
-
-        button.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
-      }
-
-      function showNotification(message) {
-        console.log("[v0] Notification:", message);
-        // In a real app, this would show a toast notification
-      }
-
-      function announceToScreenReader(message) {
-        const announcement = document.createElement("div");
-        announcement.setAttribute("role", "status");
-        announcement.setAttribute("aria-live", "polite");
-        announcement.setAttribute("aria-atomic", "true");
-        announcement.className = "sr-only";
-        announcement.textContent = message;
-        document.body.appendChild(announcement);
-        setTimeout(() => announcement.remove(), 1000);
-      }
+      const timeEl = document.querySelector(".time_in_ms");
+      setInterval(() => {
+        timeEl.textContent = Date.now();
+      }, 1000);
     </script>
   </body>
 </html>
