@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maryjane Anyanwu - Frontend Developer Profile</title>
     <style>
-      /* CSS Custom Properties for theming */
       :root {
         --color-primary: #6366f1;
         --color-primary-dark: #4f46e5;
@@ -35,7 +34,6 @@
         --transition-base: 300ms ease-in-out;
       }
 
-      /* Dark mode support */
       @media (prefers-color-scheme: dark) {
         :root {
           --color-neutral-50: #0f172a;
@@ -50,7 +48,6 @@
         }
       }
 
-      /* Reset and base styles */
       * {
         margin: 0;
         padding: 0;
@@ -77,13 +74,11 @@
         padding: var(--spacing-md);
       }
 
-      /* Main container */
       .profile-container {
         width: 100%;
         max-width: 28rem;
       }
 
-      /* Profile card */
       .profile-card {
         background-color: var(--color-neutral-100);
         border-radius: var(--radius-xl);
@@ -98,7 +93,6 @@
         box-shadow: 0 20px 35px var(--color-shadow);
       }
 
-      /* Header section with gradient background */
       .profile-header {
         background: linear-gradient(
           135deg,
@@ -109,12 +103,11 @@
         position: relative;
       }
 
-      /* Avatar positioning */
       .profile-avatar-wrapper {
         display: flex;
         justify-content: center;
       }
-      /* this */
+
       .profile-avatar {
         width: 8rem;
         height: 8rem;
@@ -130,13 +123,11 @@
         transform: scale(1.05);
       }
 
-      /* Content section */
       .profile-content {
         padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg);
         text-align: center;
       }
 
-      /* Name heading */
       .profile-name {
         font-size: 1.5rem;
         font-weight: 700;
@@ -145,7 +136,6 @@
         letter-spacing: -0.5px;
       }
 
-      /* Role/title */
       .profile-role {
         font-size: 0.875rem;
         font-weight: 600;
@@ -155,7 +145,6 @@
         margin-bottom: var(--spacing-md);
       }
 
-      /* Location */
       .profile-location {
         display: flex;
         align-items: center;
@@ -172,7 +161,6 @@
         flex-shrink: 0;
       }
 
-      /* About section */
       .profile-about {
         margin-bottom: var(--spacing-lg);
       }
@@ -192,7 +180,6 @@
         color: var(--color-text-secondary);
       }
 
-      /* Hobbies section */
       .profile-hobbies {
         margin-bottom: var(--spacing-lg);
       }
@@ -254,7 +241,6 @@
         transform: translateY(-2px);
       }
 
-      /* Action buttons */
       .profile-actions {
         display: flex;
         gap: var(--spacing-md);
@@ -315,7 +301,6 @@
         outline-offset: 2px;
       }
 
-      /* Responsive design */
       @media (max-width: 640px) {
         .profile-card {
           border-radius: var(--radius-lg);
@@ -347,7 +332,6 @@
         }
       }
 
-      /* Print styles */
       @media print {
         body {
           background-color: white;
@@ -376,17 +360,13 @@
   <body>
     <main class="profile-container" data-testid="profile-container">
       <article class="profile-card" data-testid="profile-card">
-        <!-- Header with gradient background -->
         <header
           class="profile-header"
           data-testid="profile-header"
           aria-label="Profile header"
         ></header>
 
-        <!-- Main content -->
         <div class="profile-content" data-testid="profile-content">
-          <!-- Avatar -->
-
           <div class="profile-avatar-wrapper" data-testid="avatar-wrapper">
             <img
               src="/profile.jpg"
@@ -396,7 +376,7 @@
               loading="lazy"
             />
           </div>
-          <!-- Name and role -->
+
           <h1 class="profile-name" data-testid="profile-name">
             Maryjane Anyanwu
           </h1>
@@ -404,7 +384,6 @@
             Frontend Developer
           </p>
 
-          <!-- Location -->
           <div class="profile-location" data-testid="profile-location">
             <svg
               class="location-icon"
@@ -420,8 +399,6 @@
             </svg>
             <span data-testid="location-text">Lagos, Nigeria</span>
           </div>
-
-          <!-- About section -->
           <section
             class="profile-about"
             data-testid="about-section"
@@ -440,8 +417,6 @@
               tooling and small business products — coffee-fueled and curious.
             </p>
           </section>
-
-          <!-- Hobbies section -->
           <section
             class="profile-hobbies"
             data-testid="hobbies-section"
@@ -516,8 +491,6 @@
               </li>
             </ul>
           </section>
-
-          <!-- Action buttons -->
           <div
             class="profile-actions"
             data-testid="profile-actions"
@@ -550,7 +523,6 @@
     </main>
 
     <script>
-      // Vanilla JavaScript for interactivity
       document.addEventListener("DOMContentLoaded", function () {
         const contactButton = document.querySelector(
           '[data-testid="contact-button"]'
@@ -562,7 +534,6 @@
           '[data-testid="profile-card"]'
         );
 
-        // Contact button handler
         if (contactButton) {
           contactButton.addEventListener("click", function () {
             console.log("[v0] Contact button clicked");
@@ -573,7 +544,6 @@
           });
         }
 
-        // Portfolio button handler
         if (portfolioButton) {
           portfolioButton.addEventListener("click", function () {
             console.log("[v0] Portfolio button clicked");
@@ -582,7 +552,6 @@
           });
         }
 
-        // Keyboard navigation support
         document.addEventListener("keydown", function (event) {
           if (event.key === "Escape") {
             console.log("[v0] Escape key pressed");
@@ -595,7 +564,6 @@
         });
       });
 
-      // Ripple effect function
       function addRippleEffect(button) {
         const ripple = document.createElement("span");
         const rect = button.getBoundingClientRect();
