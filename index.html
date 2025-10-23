@@ -281,22 +281,24 @@
         color: white;
         text-decoration: none;
       }
+      .about-button-link {
+        color: white;
+        text-decoration: none;
+      }
       .action-button-secondary {
-        background-color: var(--color-neutral-200);
+        background-color: var(--color-primary-dark);
         color: var(--color-text-primary);
         border: 1px solid var(--color-border);
       }
 
       .action-button-secondary:hover {
-        background-color: var(--color-neutral-200);
+        background-color: var(--color-primary-dark);
         transform: translateY(-2px);
       }
 
       .action-button-secondary:active {
         transform: translateY(0);
       }
-
-      /* Accessibility focus styles */
       .action-button:focus-visible {
         outline: 2px solid var(--color-primary);
         outline-offset: 2px;
@@ -408,13 +410,9 @@
             data-testid="about-section"
             aria-labelledby="about-title"
           >
-            <h2
-              class="section-title"
-              id="about-title"
-              data-testid="about-title"
+            <a class="section-title" id="about-title" data-testid="about-title">
+              Bio</a
             >
-              About Me
-            </h2>
             <p class="about-text" data-testid="about-text">
               Friendly frontend developer who loves building accessible
               interfaces and delightful motion. Currently focused on front-end
@@ -507,7 +505,7 @@
             >
               <a
                 class="contact-button-link"
-                href="mailto:anyanwuemjei0@gmail.com"
+                href="contact_us.html"
                 data-testid="contact-link"
               >
                 Contact</a
@@ -515,10 +513,16 @@
             </button>
             <button
               class="action-button action-button-secondary"
-              data-testid="portfolio-button"
-              aria-label="View portfolio"
+              data-testid="About-button"
+              aria-label="View about"
             >
-              Portfolio
+              <a
+                class="about-button-link"
+                href="my_story.html"
+                data-testid="about-link"
+              >
+                About Me</a
+              >
             </button>
           </div>
         </div>

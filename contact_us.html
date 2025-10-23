@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-testid="html-root">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-testid="title">Contact</title>
+    <link rel="stylesheet" href="style.css" data-testid="css-link" />
+  </head>
+  <body>
+    <header class="site-header" data-testid="header">
+      <div class="container" data-testid="header-container">
+        <a href="index.html" class="logo" data-testid="logo"></a>
+        <nav aria-label="Main navigation" data-testid="main-nav">
+          <ul class="nav-list" data-testid="nav-list">
+            <li data-testid="nav-item-home">
+              <a href="index.html" data-testid="nav-link-home"></a>
+            </li>
+            <li data-testid="nav-item-story">
+              <a href="my_story.html" data-testid="nav-link-story">About Me</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" data-testid="main">
+      <section
+        aria-labelledby="contact-heading"
+        class="contact-section"
+        data-testid="contact-section"
+      >
+        <h1 id="contact-heading" data-testid="contact-heading">Contact Me</h1>
+        <p data-testid="contact-intro">
+          To reach me, kindly fill the questions below
+        </p>
+
+        <form
+          id="contactForm"
+          novalidate
+          class="contact-form"
+          data-testid="contact-form"
+          aria-describedby="form-instructions"
+        >
+          <p
+            id="form-instructions"
+            class="sr-only"
+            data-testid="form-instructions"
+          >
+            All fields are required. Use Tab to navigate. Errors appear as you
+            type.
+          </p>
+          <label for="name" data-testid="label-name">Full name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            minlength="2"
+            maxlength="100"
+            aria-required="true"
+            data-testid="input-name"
+          />
+          <span
+            class="error"
+            aria-live="polite"
+            data-testid="error-name"
+          ></span>
+          <label for="email" data-testid="label-email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            aria-required="true"
+            data-testid="input-email"
+          />
+          <span
+            class="error"
+            aria-live="polite"
+            data-testid="error-email"
+          ></span>
+          <label for="subject" data-testid="label-subject">Subject</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            required
+            maxlength="120"
+            aria-required="true"
+            data-testid="input-subject"
+          />
+          <span
+            class="error"
+            aria-live="polite"
+            data-testid="error-subject"
+          ></span>
+          <label for="message" data-testid="label-message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            minlength="10"
+            maxlength="2000"
+            aria-required="true"
+            data-testid="input-message"
+          ></textarea>
+          <span
+            class="error"
+            aria-live="polite"
+            data-testid="error-message"
+          ></span>
+          <div class="form-actions" data-testid="form-actions">
+            <button type="submit" class="btn" data-testid="btn-submit">
+              Send message
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-testid="btn-reset"
+            >
+              Reset
+            </button>
+          </div>
+          <div
+            role="status"
+            aria-live="polite"
+            id="formStatus"
+            class="form-status"
+            data-testid="form-status"
+          ></div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-testid="footer">
+      <div class="container" data-testid="footer-container">
+        <p data-testid="footer-text">Made with ❤️ by Maryjane .</p>
+      </div>
+    </footer>
+
+    <script src="Js/app.js" data-testid="script"></script>
+  </body>
+</html>

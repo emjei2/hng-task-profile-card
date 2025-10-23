@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-testid="html-root-story">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-testid="title-story">My Story — Frontend Stage 1</title>
+    <link rel="stylesheet" href="style.css" data-testid="css-link-story" />
+  </head>
+  <body>
+    <header class="site-header" data-testid="header-story">
+      <div class="container" data-testid="header-container-story">
+        <a href="index.html" class="logo" data-testid="logo-story"></a>
+        <nav aria-label="Main navigation" data-testid="main-nav-story">
+          <ul class="nav-list" data-testid="nav-list-story">
+            <li data-testid="nav-item-home-story">
+              <a href="contact_us.html" data-testid="nav-link-home-story"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" data-testid="main-story">
+      <article class="story-article" data-testid="story-article">
+        <h1 data-testid="story-heading">My Story</h1>
+
+        <section aria-labelledby="about-me" data-testid="section-about">
+          <h2 id="about-me" data-testid="heading-about">About me</h2>
+          <p data-testid="about-paragraph">
+            Hi, I'm Maryjane. I'm frontend developer and a tech enthunsiast
+            while focusing on business administration. I enjoy building
+            beautiful, accessible interfaces and sharing my learning journey.
+          </p>
+        </section>
+
+        <section aria-labelledby="goals" data-testid="section-goals">
+          <h2 id="goals" data-testid="heading-goals">Goals</h2>
+          <ul data-testid="goals-list">
+            <li data-testid="goal-1">
+              Become a confident full-stack web developer.
+            </li>
+            <li data-testid="goal-2">
+              Ship production-ready e-commerce sites.
+            </li>
+            <li data-testid="goal-3">
+              Share progress on LinkedIn to build a portfolio.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="confidence" data-testid="section-confidence">
+          <h2 id="confidence" data-testid="heading-confidence">
+            Confidence Areas
+          </h2>
+          <p data-testid="confidence-paragraph">
+            I’m strong in front-end design, communication and teamwork, and
+            building responsive pages with HTML/CSS/JS.
+          </p>
+        </section>
+
+        <section
+          aria-labelledby="reflections"
+          data-testid="section-reflections"
+        >
+          <h2 id="reflections" data-testid="heading-reflections">
+            Reflections
+          </h2>
+          <p data-testid="reflections-paragraph">
+            Every small project teaches me better structure, accessibility and
+            testing. I’m learning to balance perfectionism with shipping.
+          </p>
+        </section>
+
+        <section aria-labelledby="dreams" data-testid="section-dreams">
+          <h2 id="dreams" data-testid="heading-dreams">Future dreams</h2>
+          <p data-testid="dreams-paragraph">
+            To lead a design-forward dev team and launch a startup that helps
+            artisans sell their work online.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer" data-testid="footer-story">
+      <div class="container" data-testid="footer-container-story">
+        <p data-testid="footer-text-story">Thanks for reading — Maryjane.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Tab") document.body.classList.remove("using-mouse");
+        });
+        document.addEventListener("mousedown", function () {
+          document.body.classList.add("using-mouse");
+        });
+      })();
+    </script>
+  </body>
+</html>
